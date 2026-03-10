@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Courgette&display=swap");
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --gray: #333;
+  --light-gray: #ddd;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Background */
+.background {
+  height: 100vh;
+  width: 100%;
+  background-color: whitesmoke;
+  background-image: none;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1% 2%;
+  background-color: white; /* blends with hero background */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 2px solid white; /* light cyan border */
+}
+.navbar img {
+  width: 40px; /* smaller size */
+  height: auto;
+}
+
+/* Nav links container */
+.navbar-items {
+  flex: 1;
+  text-align: right;
+}
+
+/* Nav links list */
+.navbar-items ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual links */
+.navbar-items ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Hover effect */
+.navbar-items ul li a:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* Special style for Sign Up */
+.navbar-items ul li a[href="#signup"] {
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 20px; /* rounded pill look */
+  padding: 8px 16px;
+}
+
+.navbar-items ul li a[href="#signup"]:hover {
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--black);
+}
+
+/* Burger hidden on desktop */
+.burger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--white);
+}
+
+/* Hero Section */
+.main {
+  height: 85vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+  padding-top: 100px;
+  background-color: whitesmoke;
+}
+
+.text-box {
+  flex: 1;
+  margin-right: 2rem;
+  color: black;
+}
+
+.text-box h1 {
+  font-size: 3rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.text-box p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.box {
+  flex: 1;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: var(--white);
+  color: var(--black);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+}
+
+.box input {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 500px; /* same as the form */
+  padding: 2rem; /* same spacing */
+}
+
+.hero-image img {
+  width: 100%; /* fills the container */
+  height: auto; /* keeps proportions */
+  border-radius: 10px; /* rounded corners like the form */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px; /* same shadow */
+}
+/* Buttons */
+.btn {
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: lightblue;
+  color: #000;
+  margin-top: 1rem;
+  width: auto;
+  display: inline-block;
+  text-decoration: none;
+  transition-behavior: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--black);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Services */
+.services {
+  width: 80%;
+  margin: auto;
+  padding: 3rem 0;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+}
+
+.box1 {
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: var(--white); /* neutral background */
+  color: var(--black);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 20px; /* softer shadow for floating effect */
+  text-align: center;
+  margin: 1.5rem; /* adds space around each card */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Hover effect to enhance floating look */
+.box1:hover {
+  transform: translateY(-8px); /* lifts the card slightly */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 12px 24px; /* deeper shadow on hover */
+}
+
+.box1 i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--black);
+}
+
+/* Quality Section */
+.quality .box2 {
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.quality .box2:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+}
+
+/* About Section */
+
+.vision,
+.mission {
+  max-width: 800px; /* keeps text readable */
+  margin: 4rem auto; /* separates sections with breathing room */
+  padding: 2rem;
+  background-color: var(--white);
+  color: var(--black);
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 16px; /* subtle floating card look */
+}
+
+.vision h2,
+.mission h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.vision p,
+.mission p {
+  line-height: 1.6;
+  font-size: 1rem;
+  color: var(--gray);
+}
+
+.about .right h1 {
+  font-size: 2rem;
+  color: var(--black);
+}
+
+footer {
+  background-color: #000; /* black background */
+  color: #fff; /* white text */
+  padding: 3rem 2rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.footer-section h3 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #ddd; /* subtle hover effect */
+}
+
+.footer-section p {
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons i {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.social-icons i:hover {
+  color: #ddd;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #444;
+  font-size: 0.85rem;
+  color: #aaa;
+}
