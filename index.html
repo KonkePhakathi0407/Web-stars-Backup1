@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindCare Hub – Student Mental Health</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<div class="blob-container">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+</div>
+ 
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobile()">✕</button>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Community</a>
+  <a href="#">Resources</a>
+  <a href="#">Contact</a>
+  <a href="signup.html" class="btn-primary">Sign Up</a>
+  <a href="login.html" class="btn-outline" style="color:white">Login</a>
+</div>
+ 
+<nav class="navbar" id="navbar">
+  <a href="#" class="logo"><span class="logo-heart">💜</span> Mind<span>Care</span></a>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Community</a></li>
+    <li><a href="#">Resources</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <div style="display:flex;gap:1rem;align-items:center">
+    <a href="login.html" style="color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.9rem">Login</a>
+    <a href="signup.html" class="nav-cta">Sign Up Free</a>
+    <div class="burger" onclick="openMobile()">☰</div>
+  </div>
+</nav>
+ 
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">💜 Mental Health Awareness for Students</div>
+    <h1>You Are Not Alone.<br><em>Help Is Here.</em></h1>
+    <div class="typing-text" id="typingText"></div>
+    <p>A safe and confidential space designed for students to find support and strength. Through journaling, crisis assistance, counselling, and community — we've got you.</p>
+    <div class="hero-btns">
+      <a href="signup.html" class="btn-primary">Get Started Free</a>
+      <a href="#services" class="btn-outline">Explore Services</a>
+    </div>
+  </div>
+  <div class="hero-shapes">
+    <div class="shape-grid">
+      <div class="shape-card"><div class="icon">📔</div><div class="label">Journal</div></div>
+      <div class="shape-card"><div class="icon">🧠</div><div class="label">Mindful</div></div>
+      <div class="shape-card"><div class="icon">🌿</div><div class="label">Heal</div></div>
+      <div class="shape-card"><div class="icon">👥</div><div class="label">Community</div></div>
+      <div class="shape-card"><div class="icon">💬</div><div class="label">Talk</div></div>
+      <div class="shape-card"><div class="icon">✨</div><div class="label">Grow</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint">↓ Scroll to explore</div>
+</section>
+ 
+<section class="quote-section">
+  <div class="quote-box">
+    <div class="quote-icon">"</div>
+    <div class="quote-text" id="quoteText"></div>
+    <div class="quote-author" id="quoteAuthor"></div>
+    <div class="quote-dots" id="quoteDots"></div>
+  </div>
+</section>
+ 
+<section class="mood-section fade-in" id="mood">
+  <div class="section-header">
+    <div class="section-tag">Daily Check-In</div>
+    <h2>How Are You Feeling Today?</h2>
+    <p>Track your mood and get personalised tips based on how you feel</p>
+  </div>
+  <div class="mood-card">
+    <h3>Select the emoji that best matches your mood right now 👇</h3>
+    <div class="emoji-row">
+      <button class="emoji-btn" onclick="selectMood(this,'amazing','😄')">😄<span class="label">Amazing</span></button>
+      <button class="emoji-btn" onclick="selectMood(this,'good','😊')">😊<span class="label">Good</span></button>
+      <button class="emoji-btn" onclick="selectMood(this,'okay','😐')">😐<span class="label">Okay</span></button>
+      <button class="emoji-btn" onclick="selectMood(this,'sad','😢')">😢<span class="label">Sad</span></button>
+      <button class="emoji-btn" onclick="selectMood(this,'anxious','😰')">😰<span class="label">Anxious</span></button>
+      <button class="emoji-btn" onclick="selectMood(this,'overwhelmed','😩')">😩<span class="label">Overwhelmed</span></button>
+    </div>
+    <div class="mood-response" id="moodResponse">
+      <h4 id="moodTitle"></h4>
+      <p id="moodTip"></p>
+    </div>
+  </div>
+</section>
+ 
+<section class="survey-section fade-in">
+  <div class="section-header">
+    <div class="section-tag">Stress Check</div>
+    <h2>How Stressed Are You Today?</h2>
+    <p>Slide to your level and get instant personalised tips</p>
+  </div>
+  <div class="survey-card">
+    <h3>On a scale of 1–10, how stressed are you feeling?</h3>
+    <div class="stress-value" id="stressVal">5</div>
+    <input type="range" class="stress-slider" id="stressSlider" min="1" max="10" value="5" oninput="updateStress(this.value)">
+    <div class="stress-labels"><span>1 – Calm</span><span>5 – Moderate</span><span>10 – Crisis</span></div>
+    <div class="survey-result" id="surveyResult">
+      <h4 id="surveyTitle" style="color:var(--purple-mid);font-weight:700;margin-bottom:1rem;"></h4>
+      <div class="tip-cards" id="tipCards"></div>
+    </div>
+  </div>
+</section>
+ 
+
+<section class="services-section fade-in" id="services">
+  <div class="section-header">
+    <div class="section-tag">What We Offer</div>
+    <h2>Our Services</h2>
+    <p>Everything you need to support your mental wellbeing in one place</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">📔</div>
+      <h3>AI Journaling</h3>
+      <p>Write entries, track emotions, and celebrate milestones with intelligent feedback and mood analysis.</p>
+      <a href="#" class="service-link">Start Journaling →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🆘</div>
+      <h3>Crisis Support</h3>
+      <p>Instant access to hotlines, AI chatbots, and emergency assistance whenever you need it most.</p>
+      <a href="#" class="service-link">Get Help Now →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📍</div>
+      <h3>Counselling Locator</h3>
+      <p>Find nearby free or paid, online or in-person counselling services tailored to students.</p>
+      <a href="#" class="service-link">Find Help Near Me →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">👥</div>
+      <h3>Community Forum</h3>
+      <p>Connect anonymously with peers facing similar challenges in a safe, moderated space.</p>
+      <a href="#" class="service-link">Join Community →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎥</div>
+      <h3>Educational Content</h3>
+      <p>Watch curated mental health videos, articles, and interactive resources created for students.</p>
+      <a href="#" class="service-link">Start Learning →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📅</div>
+      <h3>Appointments</h3>
+      <p>Stay on track with smart reminders and easy booking for counselling sessions.</p>
+      <a href="#" class="service-link">Book Session →</a>
+    </div>
+  </div>
+</section>
+ 
+
+<section class="info-section fade-in">
+  <div class="section-header">
+    <div class="section-tag">Mental Health Tips</div>
+    <h2>Knowledge Is Power</h2>
+    <p>Learn about mental health and how to support yourself and others</p>
+  </div>
+  <div class="info-grid">
+    <div class="info-card purple">
+      <div class="card-icon">🧘</div>
+      <h3>Tips for Coping with Stress</h3>
+      <ul>
+        <li>Practice deep breathing for 5 minutes daily</li>
+        <li>Break big tasks into small steps</li>
+        <li>Take regular breaks (Pomodoro method)</li>
+        <li>Limit caffeine and social media</li>
+        <li>Talk to a friend or counsellor</li>
+      </ul>
+    </div>
+    <div class="info-card green">
+      <div class="card-icon">🌱</div>
+      <h3>Daily Mental Health Habits</h3>
+      <ul>
+        <li>8 hours of quality sleep</li>
+        <li>30 minutes of physical activity</li>
+        <li>Write 3 things you're grateful for</li>
+        <li>Connect with someone you trust</li>
+        <li>Spend time in nature</li>
+      </ul>
+    </div>
+    <div class="info-card pink">
+      <div class="card-icon">⚠️</div>
+      <h3>Signs You May Need Help</h3>
+      <ul>
+        <li>Persistent sadness or hopelessness</li>
+        <li>Withdrawal from friends and activities</li>
+        <li>Changes in sleep or appetite</li>
+        <li>Difficulty concentrating</li>
+        <li>Feeling overwhelmed consistently</li>
+      </ul>
+    </div>
+    <div class="info-card blue">
+      <div class="card-icon">📚</div>
+      <h3>Student-Specific Resources</h3>
+      <ul>
+        <li>Campus wellness centres</li>
+        <li>Peer support groups on campus</li>
+        <li>Online therapy platforms (low cost)</li>
+        <li>Student mental health apps</li>
+        <li>University counselling services</li>
+      </ul>
+    </div>
+  </div>
+</section>
+ 
+
+<section class="figures-section fade-in">
+  <h2>You Deserve to Heal & Grow 🌸</h2>
+  <div class="figures-row">
+    <div class="figure">
+      <div class="figure-anim"><div class="figure-circle meditate">🧘</div></div>
+      <p>Breathe & Meditate</p>
+    </div>
+    <div class="figure">
+      <div class="figure-anim"><div class="figure-circle grow">🌱</div></div>
+      <p>Grow Every Day</p>
+    </div>
+    <div class="figure">
+      <div class="figure-anim"><div class="figure-circle float">💜</div></div>
+      <p>Feel the Love</p>
+    </div>
+    <div class="figure">
+      <div class="figure-anim"><div class="figure-circle breathe">📚</div></div>
+      <p>Learn & Thrive</p>
+    </div>
+  </div>
+</section>
+ 
+
+<section class="stats-section fade-in">
+  <div class="section-header">
+    <div class="section-tag">Our Impact</div>
+    <h2>Helping Students Every Day</h2>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-num" data-target="12500">0</div><div class="stat-label">Students Supported</div></div>
+    <div class="stat-card"><div class="stat-num" data-target="850">0</div><div class="stat-label">Counsellors Listed</div></div>
+    <div class="stat-card"><div class="stat-num" data-target="30">0</div><div class="stat-label">South African Universities</div></div>
+    <div class="stat-card"><div class="stat-num" data-target="98">0</div><div class="stat-label">% Satisfaction Rate</div></div>
+  </div>
+</section>
+ 
+
+<section class="hotlines-section fade-in" id="resources">
+  <div class="section-header">
+    <div class="section-tag">Crisis Support</div>
+    <h2>You Don't Have to Face It Alone</h2>
+    <p>Free, confidential support available 24/7 in South Africa</p>
+  </div>
+  <div class="hotlines-grid">
+    <div class="hotline-card">
+      <div class="hotline-icon red"><i class="fas fa-phone"></i></div>
+      <h4>SADAG Suicide Crisis</h4>
+      <div class="hotline-number">0800 567 567</div>
+      <p>24/7 crisis counselling & support</p>
+      <a href="tel:0800567567" class="hotline-btn">Call Now</a>
+    </div>
+    <div class="hotline-card">
+      <div class="hotline-icon blue"><i class="fas fa-comment"></i></div>
+      <h4>Lifeline South Africa</h4>
+      <div class="hotline-number">0861 322 322</div>
+      <p>Emotional support & counselling</p>
+      <a href="tel:0861322322" class="hotline-btn">Call Now</a>
+    </div>
+    <div class="hotline-card">
+      <div class="hotline-icon green"><i class="fas fa-heart"></i></div>
+      <h4>SAAITS Trauma</h4>
+      <div class="hotline-number">010 590 5920</div>
+      <p>Trauma & sexual violence support</p>
+      <a href="tel:0105905920" class="hotline-btn">Call Now</a>
+    </div>
+    <div class="hotline-card">
+      <div class="hotline-icon purple"><i class="fas fa-graduation-cap"></i></div>
+      <h4>Campus Wellness</h4>
+      <div class="hotline-number">Your University</div>
+      <p>Contact your campus health centre</p>
+      <a href="#" class="hotline-btn">Find Yours</a>
+    </div>
+  </div>
+</section>
+ 
+
+<section class="pdf-cta">
+  <h2>📄 Free Mental Health Guide for Students</h2>
+  <p>Download our comprehensive guide packed with tips, resources, and self-care strategies tailored for South African students.</p>
+  <a href="#" class="pdf-btn">
+    <i class="fas fa-download"></i> Download Free PDF
+  </a>
+</section>
+ 
+
+<section class="why-section fade-in">
+  <div class="section-header">
+    <div class="section-tag">Why MindCare</div>
+    <h2>Built With Your Privacy in Mind</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-icon">🔒</div><h3>Privacy First</h3><p>No personal details shared unless you choose to. Remain completely anonymous if you prefer.</p></div>
+    <div class="why-card"><div class="why-icon">💜</div><h3>Safe Environment</h3><p>Moderated community to ensure respectful, supportive interactions for everyone.</p></div>
+    <div class="why-card"><div class="why-icon">📊</div><h3>Progress Tracking</h3><p>AI-powered insights and milestone celebrations to keep you motivated on your journey.</p></div>
+    <div class="why-card"><div class="why-icon">🎓</div><h3>Student-Focused</h3><p>Designed specifically for the pressures and experiences of university life in South Africa.</p></div>
+  </div>
+</section>
+ 
+
+<section class="vm-section fade-in">
+  <div class="vm-grid">
+    <div class="vm-card">
+      <h2>Our Vision 🔭</h2>
+      <p>To create a world where every student feels empowered to manage their mental health, supported by technology and community, able to thrive in both academic and personal life.</p>
+    </div>
+    <div class="vm-card">
+      <h2>Our Mission 💪</h2>
+      <p>We provide accessible, anonymous, and effective tools that help students navigate mental health challenges. Through AI insights, peer support, and professional guidance, we inspire hope and build resilience.</p>
+    </div>
+  </div>
+</section>
+ 
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="logo" style="margin-bottom:1rem">💜 Mind<span style="color:white">Care</span></div>
+      <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6">A safe space for every student's mental wellbeing journey.</p>
+      <div class="footer-social">
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Campus Wellness</a></li>
+        <li><a href="#">National Helpline</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Features</h4>
+      <ul>
+        <li><a href="#">AI Journaling</a></li>
+        <li><a href="#">Crisis Support</a></li>
+        <li><a href="#">Counselling Locator</a></li>
+        <li><a href="#">Community Forum</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">Email Us</a></li>
+        <li><a href="#">YouTube Channel</a></li>
+        <li><a href="#">Facebook Page</a></li>
+        <li><a href="#">Twitter / X</a></li>
+      </ul>
+      <p style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin-top:1rem">Student Wellness Center<br>Main Campus, South Africa</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 MindCare Hub · Made with 💜 for every student</div>
+</footer>
+ 
+<script src="script.js"></script>
+</body>
+</html>
