@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up – MindCare Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+
+  <div class="floater" style="left:5%;animation-delay:0s">💜</div>
+  <div class="floater" style="left:15%;animation-delay:2s">🌱</div>
+  <div class="floater" style="left:25%;animation-delay:4s">✨</div>
+  <div class="floater" style="left:75%;animation-delay:1s">💫</div>
+  <div class="floater" style="left:85%;animation-delay:3s">🌸</div>
+  <div class="floater" style="left:92%;animation-delay:5s">🧘</div>
+
+  <div class="page-wrapper">
+    <div class="left-panel">
+      <div><a href="index.html" class="back-link">← Back to Home</a></div>
+      <div class="brand">
+        <span class="heart-logo">💜</span>
+        <span class="brand-name">Mind<span>Care</span></span>
+      </div>
+      <h1 class="left-headline">Your journey to <em>better mental health</em> starts here.</h1>
+      <p class="left-sub">Join thousands of South African students who found support, strength, and community through MindCare Hub.</p>
+      <div class="feature-list">
+        <div class="feature-item"><div class="feature-icon">🔒</div>100% confidential — remain anonymous if you wish</div>
+        <div class="feature-item"><div class="feature-icon">🧠</div>AI-powered journaling and mood tracking</div>
+        <div class="feature-item"><div class="feature-icon">📍</div>Find counsellors near your campus</div>
+        <div class="feature-item"><div class="feature-icon">👥</div>Connect with a safe student community</div>
+        <div class="feature-item"><div class="feature-icon">🆘</div>24/7 crisis support resources</div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h2>Create Your Account</h2>
+      <p class="subtitle">Free forever · No credit card required</p>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+      <form id="signupForm" novalidate>
+        <div class="anon-toggle" id="anonToggle">
+          <div class="toggle-switch" id="toggleSwitch"></div>
+          <div class="anon-text">
+            <strong>🎭 Stay Anonymous</strong>
+            <p>Hide your name – a random identity will be assigned</p>
+          </div>
+        </div>
+
+        <div class="form-row" id="nameRow">
+          <div class="form-group">
+            <label for="name">First Name</label>
+            <div class="input-wrap">
+              <i class="fas fa-user"></i>
+              <input type="text" id="name" placeholder="Your name">
+            </div>
+            <div class="field-error" id="nameErr">Please enter your name</div>
+          </div>
+          <div class="form-group">
+            <label for="surname">Last Name</label>
+            <div class="input-wrap">
+              <i class="fas fa-user"></i>
+              <input type="text" id="surname" placeholder="Your surname">
+            </div>
+            <div class="field-error" id="surnameErr">Please enter your surname</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <div class="input-wrap">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" placeholder="student@university.ac.za">
+          </div>
+          <div class="field-error" id="emailErr">Please enter a valid email</div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" placeholder="Create a strong password">
+            <i class="fas fa-eye right" id="pwEye"></i>
+          </div>
+          <div class="strength-bar">
+            <div class="strength-track"><div class="strength-fill" id="strengthFill"></div></div>
+            <div class="strength-label" id="strengthLabel"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <div class="input-wrap">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="confirmPassword" placeholder="Repeat your password">
+            <i class="fas fa-eye right" id="cpwEye"></i>
+          </div>
+          <div class="field-error" id="confirmPasswordErr">Passwords do not match</div>
+        </div>
+
+        <div class="form-group">
+          <label for="university">University</label>
+          <div class="input-wrap">
+            <i class="fas fa-graduation-cap"></i>
+            <select id="university">
+              <option value="">Select your university</option>
+              <option>University of Cape Town</option>
+              <option>University of the Witwatersrand</option>
+              <option>Stellenbosch University</option>
+              <option>University of Johannesburg</option>
+              <option>University of Pretoria</option>
+              <option>University of KwaZulu-Natal</option>
+              <option>North-West University</option>
+              <option>University of the Free State</option>
+              <option>Rhodes University</option>
+              <option>University of the Western Cape</option>
+              <option>Nelson Mandela University</option>
+              <option>University of South Africa (UNISA)</option>
+              <option>Other University</option>
+            </select>
+          </div>
+          <div class="field-error" id="universityErr">Please select your university</div>
+        </div>
+
+        <div class="divider"><span>Ready to join?</span></div>
+        <button type="submit" class="submit-btn"><span class="btn-text">✨ Create My Account</span></button>
+      </form>
+
+      <div class="login-link">Already have an account? <a href="login.html">Login here</a></div>
+    </div>
+  </div>
+
+  <div class="success-overlay" id="successOverlay">
+    <div class="success-icon">🎉</div>
+    <h2>Welcome to MindCare Hub!</h2>
+    <p>Your account has been created. You're now part of a community that cares. 💜</p>
+    <a href="login.html" class="success-btn">Go to Login →</a>
+  </div>
+
+  <script src="signup.js"></script>
+</body>
+</html>
