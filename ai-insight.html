@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MindCare Hub – AI Insights</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="ai-insights.css"/>
+</head>
+<body>
+<aside class="sidebar">
+  <div class="sidebar-brand"><div class="brand-logo">MindCare Hub</div><div class="brand-sub">ACADEMIC SANCTUARY</div></div>
+  <div class="sidebar-avatar"><div class="avatar-circle">T</div></div>
+  <nav class="sidebar-nav">
+    <a class="nav-item" href="dashboard.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard</a>
+    <a class="nav-item" href="journal.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Journal<span class="nav-badge">14</span></a>
+    <a class="nav-item" href="mood.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Mood Tracker</a>
+    <a class="nav-item active" href="ai-insights.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>AI Insights</a>
+    <a class="nav-item" href="find-help.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Find Help</a>
+    <a class="nav-item" href="crisis.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Crisis Centre</a>
+    <a class="nav-item" href="appointments.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Appointments<span class="nav-badge">1</span></a>
+    <a class="nav-item" href="forum.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Forum<span class="nav-badge">5</span></a>
+    <a class="nav-item" href="resources.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Resources</a>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="crisis-alert-box"><div class="crisis-alert-label">Need Immediate Help?</div><button class="crisis-call-btn" id="crisisCallBtn">CALL CRISIS LINE</button></div>
+    <a href="#" class="sidebar-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>Settings</a>
+    <a href="index.html" class="sidebar-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Logout</a>
+  </div>
+</aside>
+
+<main class="main">
+  <div class="page-header">
+    <div><p class="page-eyebrow">POWERED BY AI</p><h1 class="page-title">AI Insights</h1></div>
+    <div class="header-meta">Last updated: <strong>Today, 07:00 AM</strong></div>
+  </div>
+
+  <!-- HERO INSIGHT -->
+  <div class="hero-insight">
+    <div class="hero-left">
+      <div class="ai-avatar-large">🧠</div>
+      <div>
+        <p class="hero-eyebrow">WEEKLY SUMMARY</p>
+        <h2 class="hero-heading">You're making real progress, Thabo.</h2>
+        <p class="hero-body">Your mood has stabilised significantly this week. Journal consistency is up 23%, and your stress indicators have dropped compared to the midterm period. Keep going — the data shows your coping strategies are working.</p>
+      </div>
+    </div>
+    <div class="hero-score">
+      <div class="score-ring">
+        <svg viewBox="0 0 120 120" class="ring-svg">
+          <circle cx="60" cy="60" r="50" fill="none" stroke="#eee9ff" stroke-width="10"/>
+          <circle cx="60" cy="60" r="50" fill="none" stroke="#5b3ec8" stroke-width="10" stroke-dasharray="251" stroke-dashoffset="63" stroke-linecap="round" transform="rotate(-90 60 60)"/>
+        </svg>
+        <div class="score-inner"><div class="score-num">75</div><div class="score-lbl">Wellness<br/>Score</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSIGHT CARDS GRID -->
+  <div class="insights-grid">
+    <div class="insight-block pink-block">
+      <div class="insight-block-icon">📍</div>
+      <div class="insight-block-label">STRESS TRIGGER</div>
+      <h3 class="insight-block-title">Late-night caffeine</h3>
+      <p class="insight-block-body">Caffeine after 9 PM correlates with a 38% increase in next-morning anxiety scores across your last 14 journal entries.</p>
+      <div class="insight-action-row">
+        <span class="insight-confidence">High confidence</span>
+        <button class="insight-act-btn">Try cutting off at 7 PM</button>
+      </div>
+    </div>
+    <div class="insight-block green-block">
+      <div class="insight-block-icon">📈</div>
+      <div class="insight-block-label">POSITIVE PATTERN</div>
+      <h3 class="insight-block-title">Morning walks boost mood</h3>
+      <p class="insight-block-body">On days you log outdoor activity before 10 AM, your mood score averages 8.2 vs 5.9 on non-active days.</p>
+      <div class="insight-action-row">
+        <span class="insight-confidence">High confidence</span>
+        <button class="insight-act-btn">Schedule walks</button>
+      </div>
+    </div>
+    <div class="insight-block yellow-block">
+      <div class="insight-block-icon">💤</div>
+      <div class="insight-block-label">SLEEP INSIGHT</div>
+      <h3 class="insight-block-title">Sleep duration rising</h3>
+      <p class="insight-block-body">Your average sleep has increased by 48 minutes since starting your journal streak. This directly correlates with improved focus scores.</p>
+      <div class="insight-action-row">
+        <span class="insight-confidence">Medium confidence</span>
+        <button class="insight-act-btn">View sleep data</button>
+      </div>
+    </div>
+    <div class="insight-block blue-block">
+      <div class="insight-block-icon">👥</div>
+      <div class="insight-block-label">SOCIAL INSIGHT</div>
+      <h3 class="insight-block-title">Social connection matters</h3>
+      <p class="insight-block-body">Forum interactions and study group sessions preceded your top 5 highest mood days. Peer support is a key mood booster for you.</p>
+      <div class="insight-action-row">
+        <span class="insight-confidence">Medium confidence</span>
+        <button class="insight-act-btn">Join a group</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM SECTION -->
+  <div class="bottom-row">
+    <!-- Recommendations -->
+    <div class="reco-card">
+      <h3 class="section-title">Personalised Recommendations</h3>
+      <div class="reco-list">
+        <div class="reco-item"><div class="reco-num">01</div><div><p class="reco-title">4-7-8 Breathing before study sessions</p><p class="reco-desc">Try this for 2 minutes before opening your textbooks. Students who do this report 31% better focus retention.</p></div></div>
+        <div class="reco-item"><div class="reco-num">02</div><div><p class="reco-title">Book your next counselling session</p><p class="reco-desc">You haven't had a session in 12 days. Regular check-ins with Dr. Jenkins improve your baseline mood score.</p><button class="reco-link" onclick="window.location.href='appointments.html'">Book now →</button></div></div>
+        <div class="reco-item"><div class="reco-num">03</div><div><p class="reco-title">Explore the Community Forum</p><p class="reco-desc">Sharing your experience with peers who understand academic stress has strong therapeutic benefits.</p><button class="reco-link" onclick="window.location.href='forum.html'">Visit forum →</button></div></div>
+      </div>
+    </div>
+
+    <!-- Trend chart -->
+    <div class="trend-card-block">
+      <h3 class="section-title">30-Day Wellness Trend</h3>
+      <div class="mini-chart">
+        <svg viewBox="0 0 400 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:140px">
+          <defs><linearGradient id="trendGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5b3ec8" stop-opacity="0.2"/><stop offset="100%" stop-color="#5b3ec8" stop-opacity="0"/></linearGradient></defs>
+          <line x1="0" y1="35" x2="400" y2="35" stroke="#e8e8f0" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="0" y1="70" x2="400" y2="70" stroke="#e8e8f0" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="0" y1="105" x2="400" y2="105" stroke="#e8e8f0" stroke-width="1" stroke-dasharray="4 4"/>
+          <path d="M0,110 C30,100 50,90 80,85 C110,80 130,95 160,80 C190,65 210,50 250,38 C290,26 320,45 360,32 C380,26 395,28 400,25" fill="url(#trendGrad)"/>
+          <path d="M0,110 C30,100 50,90 80,85 C110,80 130,95 160,80 C190,65 210,50 250,38 C290,26 320,45 360,32 C380,26 395,28 400,25" fill="none" stroke="#5b3ec8" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="400" cy="25" r="5" fill="#5b3ec8" stroke="white" stroke-width="2"/>
+        </svg>
+        <div class="chart-labels"><span>Oct 1</span><span>Oct 15</span><span>Oct 30</span></div>
+      </div>
+      <div class="trend-stats">
+        <div class="trend-stat"><p class="trend-stat-label">START</p><p class="trend-stat-val">5.2</p></div>
+        <div class="trend-stat"><p class="trend-stat-label">CURRENT</p><p class="trend-stat-val highlight">7.8</p></div>
+        <div class="trend-stat"><p class="trend-stat-label">CHANGE</p><p class="trend-stat-val positive">+50%</p></div>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="ai-insights.js"></script>
+</body>
+</html>
